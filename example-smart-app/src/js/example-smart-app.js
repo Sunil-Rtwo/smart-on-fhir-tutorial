@@ -70,7 +70,14 @@
 
           //Medications
           var medications = medication.map(function(med) {
-            return med.medicationCodeableConcept.text;
+            return
+            {
+      dateWritten: obj.dateWritten,
+      dosageInstruction: obj.dosageInstruction,
+      note: obj.note,
+      resourceType: obj.resourceType,
+      status: obj.status
+    };
           });
           console.log('Medications:', medications);
           p.medications = medications.join(', ');
